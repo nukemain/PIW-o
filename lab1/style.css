@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eef2f3;
+  color: #333333;
+}
+
+header {
+  background-color: #0056b3;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.przyciski-naglowka button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  max-width: 1100px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lewy-panel {
+  width: 20%;
+  padding-right: 20px;
+  border-right: 2px solid #eeeeee;
+}
+
+.prawy-panel {
+  width: 70%;
+  padding-left: 20px;
+}
+
+h2 {
+  color: #0056b3;
+  border-bottom: 1px solid #0056b3;
+  padding-bottom: 5px;
+}
+
+fieldset {
+  border: 1px solid #0056b3;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fcfcfc;
+}
+
+legend {
+  font-weight: bold;
+  color: #0056b3;
+  padding: 0 5px;
+}
+
+.wiersz-formularza {
+  margin-bottom: 15px;
+}
+
+.wiersz-formularza label {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.wiersz-formularza input[type="text"],
+.wiersz-formularza input[type="number"],
+.wiersz-formularza select {
+  width: 90%;
+  padding: 6px;
+  border: 1px solid #aaaaaa;
+}
+
+.przycisk-szukaj {
+  width: 100%;
+  padding: 10px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.przycisk-szukaj:hover {
+  background-color: #004494;
+}
+
+.pozycja {
+  border: 1px solid #bbbbbb;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.pozycja h3 {
+  margin-top: 0;
+  color: #004494;
+}
+
+.pozycja ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.pozycja ul li {
+  margin-bottom: 5px;
+}
+
+.pozycja button {
+  padding: 8px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pozycja button:hover {
+  background-color: #218838;
+}
+
+/* to niżej dp index2.HTML */
+.sciezka {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.sciezka a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.sciezka a:hover {
+  text-decoration: underline;
+}
+
+.szczegoly-pozycji {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #bbbbbb;
+}
+
+.lewa-strona-szczegoly {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #cccccc;
+  min-height: 300px;
+  background-color: #eeeeee;
+  padding: 20px;
+}
+
+.obraz-zastepczy {
+  color: #777777;
+  font-weight: bold;
+  text-align: center;
+}
+
+.prawa-strona-szczegoly {
+  flex: 2;
+}
+
+.prawa-strona-szczegoly h2 {
+  margin-top: 0;
+  border-bottom: none;
+  font-size: 28px;
+}
+
+.cena-szczegoly {
+  font-size: 24px;
+  color: #28a745;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.opis-sekcja {
+  margin-bottom: 20px;
+}
+
+.opis-sekcja p {
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+.lista-cech {
+  margin: 20px 0;
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.lista-cech li {
+  margin-bottom: 8px;
+}
+
+.akcje-szczegoly {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.przycisk-do-koszyka {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.przycisk-do-koszyka:hover {
+  background-color: #218838;
+}
+
+.przycisk-powrotu {
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.pozycja .przycisk-detale {
+  padding: 8px 15px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.pozycja .przycisk-detale:hover {
+  background-color: #004494;
+}
+
+
+@media (max-width: 800px) {
+  main {
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .lewy-panel,
+  .prawy-panel {
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
+
+  .lewy-panel {
+    margin-bottom: 30px;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .przyciski-naglowka {
+    margin-top: 15px;
+  }
+
+  .przyciski-naglowka button {
+    margin: 5px;
+    display: block;
+    width: 100%;
+  }
+
+  .szczegoly-pozycji {
+    flex-direction: column;
+  }
+}

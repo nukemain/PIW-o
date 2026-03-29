@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planszówkowicz - Sklep z grami planszowymi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Planszówkowicz</h1>
+    <div class="przyciski-naglowka">
+      <button>Zaloguj / Zarejestruj</button>
+      <button>Dodaj nową pozycję</button>
+      <button>Koszyk</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="lewy-panel">
+      <h2>Filtry</h2>
+      <form>
+        <fieldset>
+          <legend>Filtrowanie pozycji</legend>
+
+          <div class="wiersz-formularza">
+            <label>Cena od:</label>
+            <input type="number" name="cena_min" placeholder="0" min="0">
+            <br>
+            <label>do:</label>
+            <input type="number" name="cena_max" placeholder="300" min="0">
+          </div>
+
+          <div class="wiersz-formularza">
+            <label>Rodzaj gry:</label>
+            <select name="rodzaj">
+              <option value="" disabled selected>-- wybierz --</option>
+              <option value="strategiczna">Strategiczna</option>
+              <option value="imprezowa">Imprezowa</option>
+              <option value="rodzinna">Rodzinna</option>
+              <option value="karciana">Karciana</option>
+            </select>
+          </div>
+
+          <div class="wiersz-formularza">
+            <label>Ilość graczy:</label>
+            <input type="number" name="gracze" placeholder="1" min="1">
+          </div>
+
+          <div class="wiersz-formularza">
+            <label>Wydawnictwo:</label>
+            <input type="text" name="wydawnictwo" placeholder="nazwa">
+          </div>
+
+          <div class="wiersz-formularza">
+            <label>Czas gry (min):</label>
+            <input type="number" name="czas" placeholder="np. 60" min="1">
+          </div>
+
+          <button type="submit" class="przycisk-szukaj">Szukaj</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="prawy-panel">
+      <h2>Lista pozycji</h2>
+
+      <div class="pozycja">
+        <h3>Catan</h3>
+        <p>Klasyka gatunku strategicznego</p>
+        <ul>
+          <li><strong>Cena:</strong> 150 zł</li>
+          <li><strong>Czas gry:</strong> 90 min</li>
+          <li><strong>Ilość graczy:</strong> 3-4</li>
+          <li><strong>Wydawnictwo:</strong> Galakta</li>
+          <li><strong>Rodzaj:</strong> Strategiczna</li>
+        </ul>
+        <button>Dodaj do koszyka</button>
+        <a href="index2.html"><button type="button" class="przycisk-detale">Szczegóły</button></a>
+      </div>
+
+      <div class="pozycja">
+        <h3>Wsiąść do Pociągu</h3>
+        <p>Buduj trasy kolejowe w Europie!</p>
+        <ul>
+          <li><strong>Cena:</strong> 180 zł</li>
+          <li><strong>Czas gry:</strong> 60 min</li>
+          <li><strong>Ilość graczy:</strong> 2-5</li>
+          <li><strong>Wydawnictwo:</strong> Rebel</li>
+          <li><strong>Rodzaj:</strong> Rodzinna</li>
+        </ul>
+        <button>Dodaj do koszyka</button>
+        <a href="index2.html"><button type="button" class="przycisk-detale">Szczegóły</button></a>
+      </div>
+
+      <div class="pozycja">
+        <h3>Uno</h3>
+        <p>Szybka i prosta gra karciana dla każdego. Polecam granie na własnych zasadach.</p>
+        <ul>
+          <li><strong>Cena:</strong> 30 zł</li>
+          <li><strong>Czas gry:</strong> 15 min</li>
+          <li><strong>Ilość graczy:</strong> 2-10</li>
+          <li><strong>Wydawnictwo:</strong> Mattel</li>
+          <li><strong>Rodzaj:</strong> Imprezowa</li>
+        </ul>
+        <button>Dodaj do koszyka</button>
+        <a href="index2.html"><button type="button" class="przycisk-detale">Szczegóły</button></a>
+      </div>
+
+    </section>
+  </main>
+</body>
+
+</html>

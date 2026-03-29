@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szczegóły | Planszówkowicz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Planszówkowicz</h1>
+        <div class="przyciski-naglowka">
+            <button>Zaloguj / Zarejestruj</button>
+            <button>Dodaj nową pozycję</button>
+            <button>Koszyk</button>
+        </div>
+    </header>
+
+    <main style="flex-direction: column;">
+        <div class="sciezka">
+            <a href="index.html">Strona główna</a> &gt; Szczegóły gry
+        </div>
+
+        <div class="szczegoly-pozycji">
+            <div class="lewa-strona-szczegoly">
+                <div class="obraz-zastepczy">tu dałbym zdjecie</div>
+            </div>
+
+            <div class="prawa-strona-szczegoly">
+                <h2>Nazwa gry</h2>
+                <p class="cena-szczegoly">1000 zł</p>
+
+                <fieldset class="opis-sekcja">
+                    <legend>Opis pozycji</legend>
+                    <p>Przykładowy opis gry planszowej (bo teraz prowadzi tu kazdy przycisk "szczegóły")</p>
+                </fieldset>
+
+                <ul class="lista-cech">
+                    <li><strong>Czas gry:</strong> 90 min</li>
+                    <li><strong>Ilość graczy:</strong> 3-4</li>
+                    <li><strong>Wydawnictwo:</strong> Nazwa wydawnictwa</li>
+                    <li><strong>Rodzaj:</strong> Rodzaj gry</li>
+                    <li><strong>Zalecany wiek:</strong> 10+</li>
+                </ul>
+
+                <div class="akcje-szczegoly">
+                    <button class="przycisk-do-koszyka">Włóż do koszyka</button>
+                    <a href="index.html"><button type="button" class="przycisk-powrotu">Powrót do listy</button></a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
