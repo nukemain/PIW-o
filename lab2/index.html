@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOowicz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>TODOowicz</h1>
+        <div class="przyciski-naglowka">
+        </div>
+    </header>
+
+    <main>
+        <div class="wiersz-formularza">
+            <div class="formularz-pola">
+                <input type="text" id="todoInput" placeholder="Wpisz treść TODO - wybierz detale obok ->">
+
+                <select id="todoPriority" title="Priorytet"> <!--priorytet-->
+                    <option value="high">Wysoki priorytet</option>
+                    <option value="low" selected>Niski priorytet</option>
+                </select>
+
+                <input type="color" id="todoColor" value="#333333" title="Wybierz kolor zadania"> <!--kolor-->
+                <input type="number" id="todoFontSize" value="16" min="10" max="36"
+                    title="Rozmiar czcionki (w pikselach)"> <!--rozmiar-->
+            </div>
+            <button id="addBtn" class="przycisk-dodaj">Dodaj</button>
+        </div>
+
+        <div class="listy-kontener">
+            <div class="kolumna-priorytet niski">
+                <h2 class="naglowek-priorytet niski">Niski priorytet</h2>
+                <ul id="todoListLow" class="lista-zadan-ul"></ul>
+            </div>
+
+            <div class="kolumna-priorytet wysoki">
+                <h2 class="naglowek-priorytet wysoki">Wysoki priorytet</h2>
+                <ul id="todoListHigh" class="lista-zadan-ul"></ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- dialogh-->
+    <dialog id="delete-modal" class="dialog-okno">
+        <h3 id="delete-modal-text" class="dialog-tekst">Czy na pewno chcesz usunąć zadanie?</h3>
+        <form method="dialog">
+            <button type="submit" value="yes" class="dialog-przycisk-tak">Tak, usuń</button>
+            <button type="submit" value="no" class="dialog-przycisk-anuluj">Anuluj</button>
+        </form>
+    </dialog>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
