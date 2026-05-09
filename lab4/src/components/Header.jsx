@@ -48,9 +48,6 @@ export default function Header() {
               Dodaj nową pozycję
             </Link>
           )}
-          <button className="px-3 py-2 bg-white text-[#333] border border-gray-300 font-bold hover:bg-gray-100 transition-colors shadow-sm rounded-sm">
-            Koszyk
-          </button>
         </div>
       </header>
 

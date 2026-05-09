@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation";
 
 export default function GameForm({ initialData = null, onSubmit }) {
   const router = useRouter();
-  
+
   const [formData, setFormData] = useState({
     title: initialData?.title || "",
-    description: Array.isArray(initialData?.description) 
-      ? initialData.description.join("\n") 
+    description: Array.isArray(initialData?.description)
+      ? initialData.description.join("\n")
       : (initialData?.description || ""),
     price_pln: initialData?.price_pln || "",
     min_players: initialData?.min_players || 1,
@@ -18,7 +18,9 @@ export default function GameForm({ initialData = null, onSubmit }) {
     publisher: initialData?.publisher || "",
     type: initialData?.type || "strategiczna",
     is_expansion: initialData?.is_expansion || false,
-    images: initialData?.images || [],
+    imagesText: Array.isArray(initialData?.images)
+      ? initialData.images.join("\n")
+      : (initialData?.images || ""),
   });
 
   const handleChange = (e) => {
@@ -31,7 +33,7 @@ export default function GameForm({ initialData = null, onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Konwertowanie odpowiednich typów
     const processedData = {
       ...initialData, // Zachowaj wszystkie pierwotne dane (w tym ownerId, isPurchased itp.)
@@ -42,6 +44,7 @@ export default function GameForm({ initialData = null, onSubmit }) {
       max_players: parseInt(formData.max_players),
       avg_play_time_minutes: parseInt(formData.avg_play_time_minutes),
       description: formData.description.split("\n").filter(line => line.trim() !== ""),
+      images: formData.imagesText.split("\n").filter(line => line.trim() !== ""),
     };
 
     onSubmit(processedData);
@@ -51,12 +54,12 @@ export default function GameForm({ initialData = null, onSubmit }) {
     <form onSubmit={handleSubmit} className="bg-white p-6 rounded-md shadow-sm border border-gray-300">
       <div className="mb-4">
         <label className="block mb-1 font-bold text-[#0056b3]">Tytuł gry</label>
-        <input 
+        <input
           required
-          type="text" 
-          name="title" 
-          value={formData.title} 
-          onChange={handleChange} 
+          type="text"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
           className="w-full p-2 border border-gray-400 rounded-sm"
         />
       </div>
@@ -64,24 +67,24 @@ export default function GameForm({ initialData = null, onSubmit }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
           <label className="block mb-1 font-bold text-[#0056b3]">Cena (PLN)</label>
-          <input 
+          <input
             required
-            type="number" 
+            type="number"
             step="0.01"
-            name="price_pln" 
-            value={formData.price_pln} 
-            onChange={handleChange} 
+            name="price_pln"
+            value={formData.price_pln}
+            onChange={handleChange}
             className="w-full p-2 border border-gray-400 rounded-sm"
           />
         </div>
         <div>
           <label className="block mb-1 font-bold text-[#0056b3]">Wydawnictwo</label>
-          <input 
+          <input
             required
-            type="text" 
-            name="publisher" 
-            value={formData.publisher} 
-            onChange={handleChange} 
+            type="text"
+            name="publisher"
+            value={formData.publisher}
+            onChange={handleChange}
             className="w-full p-2 border border-gray-400 rounded-sm"
           />
         </div>
@@ -90,37 +93,37 @@ export default function GameForm({ initialData = null, onSubmit }) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
         <div>
           <label className="block mb-1 font-bold text-[#0056b3]">Min. graczy</label>
-          <input 
+          <input
             required
-            type="number" 
+            type="number"
             min="1"
-            name="min_players" 
-            value={formData.min_players} 
-            onChange={handleChange} 
+            name="min_players"
+            value={formData.min_players}
+            onChange={handleChange}
             className="w-full p-2 border border-gray-400 rounded-sm"
           />
         </div>
         <div>
           <label className="block mb-1 font-bold text-[#0056b3]">Max. graczy</label>
-          <input 
+          <input
             required
-            type="number" 
+            type="number"
             min="1"
-            name="max_players" 
-            value={formData.max_players} 
-            onChange={handleChange} 
+            name="max_players"
+            value={formData.max_players}
+            onChange={handleChange}
             className="w-full p-2 border border-gray-400 rounded-sm"
           />
         </div>
         <div>
           <label className="block mb-1 font-bold text-[#0056b3]">Czas gry (min)</label>
-          <input 
+          <input
             required
-            type="number" 
+            type="number"
             min="1"
-            name="avg_play_time_minutes" 
-            value={formData.avg_play_time_minutes} 
-            onChange={handleChange} 
+            name="avg_play_time_minutes"
+            value={formData.avg_play_time_minutes}
+            onChange={handleChange}
             className="w-full p-2 border border-gray-400 rounded-sm"
           />
         </div>
@@ -128,9 +131,9 @@ export default function GameForm({ initialData = null, onSubmit }) {
 
       <div className="mb-4">
         <label className="block mb-1 font-bold text-[#0056b3]">Rodzaj gry</label>
-        <select 
-          name="type" 
-          value={formData.type} 
+        <select
+          name="type"
+          value={formData.type}
           onChange={handleChange}
           className="w-full p-2 border border-gray-400 rounded-sm"
         >
@@ -149,24 +152,35 @@ export default function GameForm({ initialData = null, onSubmit }) {
 
       <div className="mb-4">
         <label className="flex items-center gap-2 cursor-pointer">
-          <input 
-            type="checkbox" 
-            name="is_expansion" 
-            checked={formData.is_expansion} 
-            onChange={handleChange} 
+          <input
+            type="checkbox"
+            name="is_expansion"
+            checked={formData.is_expansion}
+            onChange={handleChange}
             className="w-4 h-4"
           />
           <span className="font-bold text-[#0056b3]">To jest dodatek do gry</span>
         </label>
       </div>
 
+      <div className="mb-4">
+        <label className="block mb-1 font-bold text-[#0056b3]">Linki - osobna linia to osobne zdjęcie</label>
+        <textarea
+          name="imagesText"
+          value={formData.imagesText}
+          onChange={handleChange}
+          rows="3"
+          className="w-full p-2 border border-gray-400 rounded-sm"
+        />
+      </div>
+
       <div className="mb-6">
-        <label className="block mb-1 font-bold text-[#0056b3]">Opis (każda linia to osobny akapit)</label>
-        <textarea 
+        <label className="block mb-1 font-bold text-[#0056b3]">Opis </label>
+        <textarea
           required
-          name="description" 
-          value={formData.description} 
-          onChange={handleChange} 
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
           rows="6"
           className="w-full p-2 border border-gray-400 rounded-sm"
         />

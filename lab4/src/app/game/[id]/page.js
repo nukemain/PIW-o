@@ -65,7 +65,7 @@ export default function GameDetails({ params }) {
           <div className="w-full flex justify-center items-center border-2 border-dashed border-[#cccccc] min-h-[300px] bg-[#eeeeee] p-5 rounded-md mb-4">
             {game.images && game.images.length > 0 ? (
               <img
-                src={`https://szandala.github.io/piwo-api/images/board-games/${game.images[currentImageIdx].split('/').pop()}`}
+                src={getImageUrl(game.images[currentImageIdx])}
                 alt={game.title}
                 className="max-w-full max-h-full object-contain rounded-md shadow-sm"
               />
@@ -90,7 +90,7 @@ export default function GameDetails({ params }) {
                     }`}
                 >
                   <img
-                    src={`https://szandala.github.io/piwo-api/images/board-games/${img.split('/').pop()}`}
+                    src={getImageUrl(img)}
                     alt={`${game.title} - zdjęcie ${idx + 1}`}
                     className="w-full h-full object-cover"
                   />

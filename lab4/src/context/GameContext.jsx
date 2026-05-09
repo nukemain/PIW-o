@@ -15,26 +15,9 @@ export function GameProvider({ children }) {
       try {
         const gamesCol = collection(db, "games");
         const gamesSnapshot = await getDocs(gamesCol);
-        
-        if (!gamesSnapshot.empty) {
-          // Pobierz z Firestore jeśli istnieje
-          const gamesList = gamesSnapshot.docs.map(doc => ({ ...doc.data(), id: parseInt(doc.id) }));
-          setGames(gamesList.sort((a,b) => a.id - b.id));
-          setIsLoaded(true);
-        } else {
-          // Pobierz z API początkowe dane i uzupełnij bazę
-          const res = await fetch("https://szandala.github.io/piwo-api/board-games.json");
-          const data = await res.json();
-          const fetchedGames = data.board_games;
-          
-          setGames(fetchedGames);
-          setIsLoaded(true);
-          
-          // Seed Firestore w tle
-          for (const game of fetchedGames) {
-            await setDoc(doc(db, "games", game.id.toString()), game);
-          }
-        }
+        const gamesList = gamesSnapshot.docs.map(doc => ({ ...doc.data(), id: parseInt(doc.id) }));
+        setGames(gamesList.sort((a,b) => a.id - b.id));
+        setIsLoaded(true);
       } catch (err) {
         console.error("Błąd pobierania gier z Firestore:", err);
         setIsLoaded(true);
